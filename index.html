@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGIMO Corporation | Own It Forever.</title>
+    <style>
+        /* CSS Reset / Base Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Classic Web 2.0 subtle background pattern */
+            background-color: #dce6f2;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,0.4) 4px, rgba(255,255,255,0.4) 8px);
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        a {
+            color: #005bb5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container Structure */
+        #page-wrapper {
+            max-width: 960px; /* The classic 960 grid system width */
+            width: 95%;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid #b5c4d6;
+            overflow: hidden;
+        }
+
+        /* Header / Logo */
+        header {
+            background: linear-gradient(to bottom, #ffffff 0%, #eef3f9 100%);
+            padding: 25px 30px;
+            border-bottom: 1px solid #d0dceb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-container {
+            position: relative;
+        }
+
+        h1.logo {
+            font-family: "Trebuchet MS", "Arial Black", sans-serif;
+            font-size: 42px;
+            font-weight: bold;
+            color: #1e5799;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 0px #fff, 2px 2px 3px rgba(0,0,0,0.15);
+            margin-bottom: -5px;
+        }
+
+        .beta-badge {
+            position: absolute;
+            top: -5px;
+            right: -45px;
+            background: #ff0000;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 4px;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            transform: rotate(15deg);
+        }
+
+        .tagline {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .login-area {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .login-area input {
+            padding: 4px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        /* Navigation Bar - Glossy */
+        nav {
+            background: linear-gradient(to bottom, #4b98e6 0%, #1e5799 100%);
+            border-bottom: 1px solid #133a66;
+            border-top: 1px solid #7cb7f2;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            border-right: 1px solid #133a66;
+            border-left: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav ul li:first-child {
+            border-left: none;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 12px 25px;
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        nav ul li a:hover, nav ul li.active a {
+            background: linear-gradient(to bottom, #5cacfc 0%, #2972c4 100%);
+        }
+
+        /* Hero Banner */
+        #hero {
+            background: #2b2b2b url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="20"/></svg>') no-repeat right center;
+            background-size: cover;
+            color: #fff;
+            padding: 40px 30px;
+            border-bottom: 5px solid #ff9900;
+            position: relative;
+        }
+
+        #hero h2 {
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        #hero p {
+            font-size: 16px;
+            max-width: 600px;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        /* Glossy Call to Action Button */
+        .btn-glossy {
+            display: inline-block;
+            background: linear-gradient(to bottom, #ffc84d 0%, #ff9900 50%, #e66e00 51%, #cc5200 100%);
+            border: 1px solid #993d00;
+            border-radius: 20px; /* Heavy rounding */
+            padding: 12px 30px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.1s ease;
+            cursor: pointer;
+        }
+
+        .btn-glossy:hover {
+            background: linear-gradient(to bottom, #ffd673 0%, #ffaa22 50%, #f07b00 51%, #e05e00 100%);
+            text-decoration: none;
+        }
+
+        .btn-glossy:active {
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+            background: linear-gradient(to bottom, #cc5200 0%, #e66e00 50%, #ff9900 51%, #ffc84d 100%);
+        }
+
+        /* Main Content Layout */
+        #content-area {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        main {
+            flex: 1 1 600px;
+        }
+
+        aside {
+            flex: 1 1 250px;
+            background: #f7f9fc;
+            border: 1px solid #d0dceb;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+        }
+
+        /* Typography inside main/aside */
+        h3 {
+            color: #1e5799;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-family: "Trebuchet MS", sans-serif;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .feature-box {
+            background: linear-gradient(to bottom, #fefefe, #f0f0f0);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .feature-box ul {
+            list-style: none;
+            margin-left: 10px;
+        }
+
+        .feature-box ul li {
+            padding-left: 25px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        /* Fake CSS checkmarks */
+        .feature-box ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #60b044;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Sidebar Widgets */
+        .widget {
+            margin-bottom: 25px;
+        }
+
+        .widget h4 {
+            background: linear-gradient(to bottom, #7cb7f2, #4b98e6);
+            color: white;
+            padding: 8px 10px;
+            border-radius: 4px 4px 0 0;
+            font-size: 13px;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+            margin: -15px -15px 10px -15px;
+        }
+
+        .news-item {
+            margin-bottom: 12px;
+            font-size: 12px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .news-date {
+            color: #999;
+            font-size: 10px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .testimonial {
+            font-style: italic;
+            color: #555;
+            font-family: Georgia, serif;
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-left: 3px solid #ff9900;
+        }
+
+        /* Footer */
+        footer {
+            background: #eef3f9;
+            border-top: 1px solid #d0dceb;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 11px;
+            color: #777;
+        }
+
+        footer a {
+            color: #555;
+            margin: 0 5px;
+        }
+
+        /* Media Queries for modern responsiveness while keeping the old feel */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .login-area { margin-top: 10px; }
+            nav ul { flex-direction: column; }
+            nav ul li { border-right: none; border-bottom: 1px solid #133a66; border-left: none; }
+            #content-area { flex-direction: column; }
+            #hero { padding: 30px 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page-wrapper">
+        
+        <!-- Header Section -->
+        <header>
+            <div class="logo-container">
+                <h1 class="logo">ENGIMO<span style="color:#ff9900;">.</span></h1>
+                <div class="beta-badge">BETA</div>
+                <div class="tagline">Taking back the digital frontier.</div>
+        </div>
+        
+        <!-- Classic top-right login fields (Updated for Clerk auth) -->
+        <div class="login-area" style="text-align: right; line-height: 1.8;">
+            <div style="margin-bottom: 4px; font-size: 11px; font-weight: bold; color: #555;">Client Portal</div>
+            <a href="https://accounts.engimo.org/sign-in" style="display: inline-block; background: #f4f4f4; border: 1px solid #ccc; padding: 3px 12px; border-radius: 3px; color: #333; text-decoration: none; font-size: 11px; margin-right: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">Log In</a>
+            <a href="https://accounts.engimo.org/sign-up" style="display: inline-block; background: linear-gradient(to bottom, #7cb7f2, #4b98e6); border: 1px solid #133a66; padding: 3px 12px; border-radius: 3px; color: #fff; text-decoration: none; font-size: 11px; font-weight: bold; box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.2); text-shadow: 0 -1px 0 rgba(0,0,0,0.3);">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Glossy Navigation -->
+        <nav>
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero / Web 2.0 Splash -->
+        <div id="hero">
+            <h2>Own It. Don't Rent It.</h2>
+            <p>Remember when you bought software, movies, and music, and they were yours to keep forever? We're bringing that back. No monthly fees. No "always-online" DRM. Just pure, unadulterated ownership.</p>
+            <a href="#buy" class="btn-glossy">Get the ENGIMO Master Suite →</a>
+        </div>
+
+        <!-- Main Content & Sidebar -->
+        <div id="content-area">
+            
+            <!-- Left Column: Main Copy -->
+            <main>
+                <h3>Welcome to the ENGIMO Revolution</h3>
+                <p>Are you tired of "Software as a Service"? Sick of your favorite movies suddenly disappearing from streaming platforms due to licensing disputes? At <strong>ENGIMO Corporation</strong>, we believe the subscription model has gone too far.</p>
+                
+                <p>We build top-tier digital and physical products that respect the consumer. When you purchase from us, you get the actual files, the physical media, and the license key. We can't revoke it. We won't charge you a monthly fee to use what you already paid for.</p>
+
+                <div class="feature-box">
+                    <h4 style="margin-bottom: 10px; color: #333;">The ENGIMO Guarantee:</h4>
+                    <ul>
+                        <li><strong>100% DRM-Free:</strong> Back up your files to any hard drive, anywhere.</li>
+                        <li><strong>Physical Media Options:</strong> Order on CD, DVD, Blu-Ray, or custom USB drives.</li>
+                        <li><strong>Zero Subscriptions:</strong> Buy once, use it for the rest of your life.</li>
+                        <li><strong>No Online Check-ins:</strong> Use our software on completely offline computers.</li>
+                        <li><strong>Legacy Support:</strong> Compatible with Windows XP, Vista, 7, and modern OS!</li>
+                    </ul>
+                </div>
+
+                <h3>Featured Product: ENGIMO Media Suite 2011</h3>
+                <p>Our flagship product replaces 4 different monthly subscriptions. Includes our state-of-the-art Video Editor, Photo Manipulator, and Offline Cloud-Sync Client (Host it yourself!). Shipped directly to your door in a beautiful glossy cardboard box with a thick, printed instruction manual.</p>
+            </main>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <div class="widget">
+                    <h4>Latest Updates</h4>
+                    <div class="news-item">
+                        <span class="news-date">October 14th</span>
+                        <a href="#">ENGIMO MP3 Player app goes Open Source! Download the source code now.</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">September 28th</span>
+                        <a href="#">Server maintenance: Our physical backup tapes are being rotated.</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">September 12th</span>
+                        <a href="#">Why we said NO to the cloud. Read the CEO's latest blog post.</a>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h4>User Testimonials</h4>
+                    <div class="testimonial">
+                        "I finally canceled 6 different subscriptions and bought the Engimo Media Suite. The interface is clean, the software is fast, and best of all, it just works without an internet connection."
+                        <br><br>
+                        <strong style="color:#ff9900;">— TechGeek88</strong>
+                    </div>
+                </div>
+
+                <div class="widget" style="text-align: center;">
+                    <h4 style="background: linear-gradient(to bottom, #5cacfc, #1e5799);">Newsletter Signup</h4>
+                    <p style="font-size: 11px; margin-bottom: 10px;">Get updates via RSS or Email.</p>
+                    <input type="text" placeholder="your@email.com" style="padding: 5px; width: 80%; margin-bottom: 5px; border: 1px solid #ccc;">
+                    <button style="padding: 4px 10px; background: #e0e0e0; border: 1px solid #999; border-radius: 3px; cursor: pointer;">Subscribe</button>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                <a href="#">Home</a> | 
+                <a href="#">Sitemap</a> | 
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service (The Good Kind)</a> | 
+                <a href="#">Contact Webmaster</a>
+            </p>
+            <p style="margin-top: 10px;">
+                &copy; ENGIMO Corporation. All rights reserved. <br>
+                <em>Best viewed in Mozilla Firefox or Internet Explorer 8 at 1024x768 resolution.</em>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
