@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center | ENGIMO Corporation</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link ref="stylesheet" href="https://static.engimo.org/css/apps/root/support.css" />
+</head>
+<body>
+
+    <div id="page-wrapper">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <a href="/" style="text-decoration: none;">
+                    <h1 class="logo">ENGIMO<span style="color:#ff9900;">.</span></h1>
+                </a>
+                <div class="tagline">Taking back the digital frontier.</div>
+            </div>
+            
+            <div class="login-area">
+                <div style="margin-bottom: 4px; font-size: 11px; font-weight: bold; color: #555;">Client Login</div>
+                <a href="#" class="btn-small btn-gray">Portal Login</a>
+                <a href="#" class="btn-small btn-blue">Register</a>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="active"><a href="/support.html">Support</a></li>
+            </ul>
+        </nav>
+
+        <!-- Banner -->
+        <div id="page-banner">
+            <h2>Support & Help Center</h2>
+        </div>
+
+        <div id="content-area">
+            
+            <main>
+                <!-- Clickable Hero Section -->
+                <a href="javascript:void(0)" class="knowledge-hero" onclick="alert('The Knowledge Base is coming soon! Our engineers are currently documenting the GWA protocols.')">
+                    <span class="hero-badge">Under Construction</span>
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Browse Knowledge Base</h3>
+                    <p>Access technical documentation, integration guides, and system requirements. Click to enter our self-service knowledge base.</p>
+                </a>
+
+                <!-- Contact Form (Functional with FormSubmit) -->
+                <div class="support-form">
+                    <h3>Submit a Trouble Ticket</h3>
+                    <p style="font-size: 12px; margin-bottom: 20px; color: #666;">
+                        Direct engineering support. All tickets are encrypted during transit.
+                    </p>
+                    
+                    <form action="https://formsubmit.co/contact@engimo.org" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Support Ticket - ENGIMO Support">
+                        <input type="hidden" name="_template" value="table">
+                        <!-- Add your return URL here if you have one -->
+                        <!-- <input type="hidden" name="_next" value="https://engimo.org/thanks.html"> -->
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" required placeholder="e.g. John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Priority Level</label>
+                            <select name="priority">
+                                <option value="Low">Low - General Question</option>
+                                <option value="Medium">Medium - Integration Issue</option>
+                                <option value="High">High - System Malfunction</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message / Description of Issue</label>
+                            <textarea name="message" required placeholder="Describe your issue in detail..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Dispatch Ticket</button>
+                    </form>
+                </div>
+            </main>
+
+            <aside>
+                <div class="widget">
+                    <div class="widget-header">Community Spotlight</div>
+                    <div class="widget-content">
+                        <p><em>"Why offline architecture is the future of data sovereignty."</em></p>
+                        <a href="#" style="font-size: 11px; margin-top: 8px; display: block; font-weight: bold;">Coming Soon »</a>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-header">Security Advisory</div>
+                    <div class="widget-content">
+                        <p style="color: #666; line-height: 1.4;">
+                            Remember: ENGIMO employees will never ask for your private encryption keys. Keep them on air-gapped hardware.
+                        </p>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+        <footer>
+            <p>
+                <a href="/">Home</a> | 
+                <a href="#">Sitemap</a> | 
+                <a href="privacy-policy.html">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Support Portal</a>
+            </p>
+            <p style="margin-top: 15px;">
+                &copy; 2011 ENGIMO Corporation. <br>
+                <em>Optimized for Firefox 4 and Internet Explorer 9.</em>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
